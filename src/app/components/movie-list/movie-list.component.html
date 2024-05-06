@@ -18,7 +18,7 @@
         <h4>Title: {{ movie.title }}</h4>
         <div class="movie-details">
           <p>Release Date: {{ movie.release_date }}</p>
-          <p>Budget: ${{ movie.budget }} million</p>
+          <p>Budget: {{ movie.budget | moneyFormat }}</p>
           <p>Duration: {{ movie.duration | duration }}</p>
         </div>
       </li>

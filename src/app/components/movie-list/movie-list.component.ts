@@ -5,13 +5,14 @@ import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Movie } from '../../interfaces/movies.interface';
 import { DurationPipe } from "../../pipes/duration.pipe";
+import { MoneyFormatPipe } from "../../pipes/money-format.pipe";
 
 @Component({
     standalone: true,
     selector: 'app-movie-list',
     templateUrl: './movie-list.component.html',
     styleUrls: ['./movie-list.component.css'],
-    imports: [NgFor, RouterModule, FormsModule, DurationPipe]
+    imports: [NgFor, RouterModule, FormsModule, DurationPipe, MoneyFormatPipe]
 })
 export class MovieListComponent implements OnInit {
 

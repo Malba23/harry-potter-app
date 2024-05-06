@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Movie, MovieDetails } from '../interfaces/movies.interface';
+import { Movie } from '../interfaces/movies.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MovieService {
     return this.http.get<Movie[]>(`/movies`);
   }
 
-  getMovieDetails(movieId: string): Observable<MovieDetails> {
-    return this.http.get<MovieDetails>(`/movies/${movieId}`);
+  getMovieDetails(movieId: string): Observable<Movie> {
+    return this.http.get<Movie>(`/movies/${movieId}`);
   }
 }

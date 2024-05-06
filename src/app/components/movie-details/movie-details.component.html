@@ -28,8 +28,8 @@
     </thead>
     <tbody>
       <tr>
-        <td data-label="box_office">${{ movieDetails.box_office }} million</td>
-        <td data-label="budget">${{ movieDetails.budget }} million</td>
+        <td data-label="box_office">{{ movieDetails.box_office | moneyFormat }}</td>
+        <td data-label="budget">{{ movieDetails.budget | moneyFormat }}</td>
         <td data-label="duration">{{ movieDetails.duration | duration }}</td>
         <td data-label="producers">{{ movieDetails.producers }}</td>
         <td data-label="cinematographers">{{ movieDetails.cinematographers }}</td>
