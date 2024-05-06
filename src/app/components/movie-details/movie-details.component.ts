@@ -15,14 +15,14 @@ import { DurationPipe } from "../../pipes/duration.pipe";
 export class MovieDetailsComponent implements OnInit {
 
   movieDetails!: MovieDetails;
-  movieId: string = '';;
+  movieId: string = '';
 
   constructor(private route: ActivatedRoute, private movieService: MovieService, private location: Location) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.movieId = params['id'];
-      this.movieService.getMovieDetails(this.movieId).subscribe(data => {
+      this.movieService.getMovieDetails(this.movieId).subscribe((data: MovieDetails) => {
         this.movieDetails = data;
       });
     });

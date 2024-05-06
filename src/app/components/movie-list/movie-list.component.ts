@@ -23,14 +23,14 @@ export class MovieListComponent implements OnInit {
   constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe(data => {
+    this.movieService.getAllMovies().subscribe((data: Movie[]) => {
       this.movies = data;
       this.applyFilters();
     });
   }
 
   applyFilters(): void {
-    this.filteredMovies = this.movies.filter(movie => {
+    this.filteredMovies = this.movies.filter((movie: Movie) => {
       return (
         movie.title.toLowerCase().includes(this.titleFilter.toLowerCase()) &&
         movie.release_date.includes((this.yearFilter ?? 0).toString())
