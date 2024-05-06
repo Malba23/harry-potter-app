@@ -1,0 +1,29 @@
+<div class="body">
+
+  <h2>Harry Potter movies list</h2>
+
+  <div class="card">
+    <h4>Filters</h4>
+    <div class="filters">
+      <label>Title</label>
+      <input type="text" [(ngModel)]="titleFilter" (input)="applyFilters()">
+      <label>Release year</label>
+      <input type="number" [(ngModel)]="yearFilter" (input)="applyFilters()">
+    </div>
+  </div>
+
+  <div *ngFor="let movie of filteredMovies" class="movie">
+    <ul>
+      <li>
+        <h4>Title: {{ movie.title }}</h4>
+        <div class="movie-details">
+          <p>Release Date: {{ movie.release_date }}</p>
+          <p>Budget: ${{ movie.budget }} million</p>
+          <p>Duration: {{ movie.duration | duration }}</p>
+        </div>
+      </li>
+    </ul>
+    <button (click)="showMovieDetails(movie.id)">Details</button>
+  </div>
+
+</div>

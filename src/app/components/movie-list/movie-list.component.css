@@ -1,0 +1,38 @@
+input {
+  background-color: #ECEFF4;
+  color: black;
+}
+
+button {
+  background-color: #E5E9F0;
+  color: black;
+  height: 50%;
+}
+
+.body {
+  padding: 1rem 2rem;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.movie {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+
+  .movie-details {
+    display: flex;
+  }
+}
+
+.card {
+  border: .0625rem solid #E5E9F0;
+  max-width: 75%;
+  padding: .75rem;
+  background-color: #E5E9F0;
+  color: black;
+}

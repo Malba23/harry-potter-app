@@ -1,0 +1,42 @@
+<div class="title" *ngIf="movieDetails">
+  <button (click)="goBack()">
+    <span class="icon-home inverse"></span>
+    Back
+  </button>
+  <h2>Title: {{ movieDetails.title }}</h2>
+</div>
+
+<div class="movie-selected" *ngIf="movieDetails">
+
+  <div class="subtitle">
+    <div class="summary">
+      <img src="{{ movieDetails.poster }}" alt="Image description" width="225"/>
+      <span><b>Summary:</b> {{ movieDetails.summary }}</span>
+    </div>
+  </div>
+
+  <table class="horizontal">
+    <caption>Details</caption>
+    <thead>
+      <tr>
+        <th>Box Office</th>
+        <th>Budget</th>
+        <th>Duration</th>
+        <th>Producers</th>
+        <th>Cinematographers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="box_office">${{ movieDetails.box_office }} million</td>
+        <td data-label="budget">${{ movieDetails.budget }} million</td>
+        <td data-label="duration">{{ movieDetails.duration | duration }}</td>
+        <td data-label="producers">{{ movieDetails.producers }}</td>
+        <td data-label="cinematographers">{{ movieDetails.cinematographers }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
